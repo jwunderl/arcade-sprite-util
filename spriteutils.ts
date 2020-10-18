@@ -12,6 +12,7 @@ namespace spriteutils {
      */
     //% block="$sprite is destroyed"
     //% blockId=spriteutilextisdestroyed
+    //% help=github:arcade-sprite-util/docs/is-destroyed
     //% sprite.shadow=variables_get
     //% sprite.defl=mySprite
     //% weight=100
@@ -26,6 +27,7 @@ namespace spriteutils {
      */
     //% block="distance between $a and $b"
     //% blockId=spriteutilextdistbw
+    //% help=github:arcade-sprite-util/docs/distance-between
     //% a.shadow=variables_get
     //% a.defl=mySprite
     //% b.shadow=variables_get
@@ -43,6 +45,7 @@ namespace spriteutils {
      */
     //% block="angle from $a to $b"
     //% blockId=spriteutilextanglebw
+    //% help=github:arcade-sprite-util/docs/angle-from
     //% a.shadow=variables_get
     //% a.defl=mySprite
     //% b.shadow=variables_get

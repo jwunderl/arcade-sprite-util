@@ -11,7 +11,10 @@
         "docs/radians-to-degrees.md",
         "docs/degrees-to-radians.md",
         "docs/set-console-overlay.md",
-        "docs/create-renderable.md"
+        "docs/create-renderable.md",
+        "docs/is-destroyed.md",
+        "docs/distance-between.md",
+        "docs/angle-from.md"
     ],
     "testFiles": [
         "test.ts"
