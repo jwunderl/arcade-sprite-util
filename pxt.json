@@ -7,8 +7,7 @@
     },
     "files": [
         "README.md",
-        "main.blocks",
-        "main.ts"
+        "spriteutils.ts"
     ],
     "testFiles": [
         "test.ts"
@@ -21,5 +20,5 @@
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }
