@@ -14,6 +14,7 @@ namespace spriteutils {
     //% blockId=spriteutilextisdestroyed
     //% sprite.shadow=variables_get
     //% sprite.defl=mySprite
+    //% weight=100
     //% group=Sprite
     export function isDestroyed(sprite: Sprite): boolean {
         return !sprite || !!(sprite.flags & sprites.Flag.Destroyed);
@@ -29,6 +30,7 @@ namespace spriteutils {
     //% a.defl=mySprite
     //% b.shadow=variables_get
     //% b.defl=myEnemy
+    //% weight=90
     //% group=Sprite
     export function distanceBetween(a: Sprite, b: Sprite): number {
         if (!a || !b) return 0;
@@ -45,6 +47,7 @@ namespace spriteutils {
     //% a.defl=mySprite
     //% b.shadow=variables_get
     //% b.defl=myEnemy
+    //% weight=80
     //% group=Sprite
     export function angleFrom(a: Sprite, b: Sprite): number {
         if (!a || !b) return 0;
@@ -52,5 +55,25 @@ namespace spriteutils {
             b.y - a.y,
             b.x - a.x
         );
+    }
+
+    /**
+     * Converts a number from radians to degrees
+     */
+    //% block="convert $asRadians radians to degrees"
+    //% weight=80
+    //% group=General
+    export function radiansToDegrees(asRadians: number): number {
+        return asRadians * 180 / Math.PI;
+    }
+
+    /**
+     * Converts a number from degrees to radians
+     */
+    //% block="convert $asDegrees degrees to radians"
+    //% weight=80
+    //% group=General
+    export function degreesToRadians(asDegrees: number): number {
+        return asDegrees * Math.PI / 180;
     }
 }
