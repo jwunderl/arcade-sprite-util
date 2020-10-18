@@ -61,6 +61,7 @@ namespace spriteutils {
      * Converts a number from radians to degrees
      */
     //% block="convert $asRadians radians to degrees"
+    //% blockId=spriteutilextradtodeg
     //% weight=80
     //% group=General
     export function radiansToDegrees(asRadians: number): number {
@@ -71,9 +72,22 @@ namespace spriteutils {
      * Converts a number from degrees to radians
      */
     //% block="convert $asDegrees degrees to radians"
+    //% blockId=spriteutilextdegtorad
     //% weight=80
     //% group=General
     export function degreesToRadians(asDegrees: number): number {
         return asDegrees * Math.PI / 180;
+    }
+
+    /**
+     * Create a renderable that draws on the screen every frame
+     */
+    //% block="render on z-index $index to $screen"
+    //% blockId=spriteutilextcreaterenderable
+    //% draggableParameters="reporter"
+    //% weight=70
+    //% group=General
+    export function createRenderable(index: number, handler: (screen: Image) => void) {
+        scene.createRenderable(index, handler);
     }
 }
