@@ -39,7 +39,7 @@ namespace spriteutils {
      * Returns the angle between the center of two sprites in radians.
      * If either sprite is undefined returns 0.
      */
-    //% block="angle from $a and $b"
+    //% block="angle from $a to $b"
     //% blockId=spriteutilextanglebw
     //% a.shadow=variables_get
     //% a.defl=mySprite
