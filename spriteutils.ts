@@ -62,6 +62,7 @@ namespace spriteutils {
      */
     //% block="convert $asRadians radians to degrees"
     //% blockId=spriteutilextradtodeg
+    //% help=github:arcade-sprite-util/docs/radians-to-degrees
     //% weight=80
     //% group=General
     export function radiansToDegrees(asRadians: number): number {
@@ -73,6 +74,7 @@ namespace spriteutils {
      */
     //% block="convert $asDegrees degrees to radians"
     //% blockId=spriteutilextdegtorad
+    //% help=github:arcade-sprite-util/docs/degrees-to-radians
     //% weight=80
     //% group=General
     export function degreesToRadians(asDegrees: number): number {
@@ -89,5 +91,18 @@ namespace spriteutils {
     //% group=General
     export function createRenderable(index: number, handler: (screen: Image) => void) {
         scene.createRenderable(index, handler);
+    }
+
+    /**
+     * Set 
+     */
+    //% block="console overlay $on"
+    //% on.shadow=toggleOnOff
+    //% blockId=spriteutilextsetconsolevisible
+    //% help=github:arcade-sprite-util/docs/set-console-overlay
+    //% weight=60
+    //% group=General
+    export function setConsoleOverlay(on: boolean) {
+        game.consoleOverlay.setVisible(on);
     }
 }
