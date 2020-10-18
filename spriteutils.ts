@@ -86,6 +86,7 @@ namespace spriteutils {
      */
     //% block="render on z-index $index to $screen"
     //% blockId=spriteutilextcreaterenderable
+    //% help=github:arcade-sprite-util/docs/create-renderable
     //% draggableParameters="reporter"
     //% weight=70
     //% group=General
