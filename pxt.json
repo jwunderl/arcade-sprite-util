@@ -14,7 +14,8 @@
         "docs/create-renderable.md",
         "docs/is-destroyed.md",
         "docs/distance-between.md",
-        "docs/angle-from.md"
+        "docs/angle-from.md",
+        "docs/place-angle-from.md"
     ],
     "testFiles": [
         "test.ts"

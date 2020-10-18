@@ -61,6 +61,29 @@ namespace spriteutils {
     }
 
     /**
+     * Places a sprite (spriteToMove) a given distance away from the other sprite (fromSprite),
+     * at the provided angle
+     */
+    //% block="place $spriteToMove angle $angleInRadians distance $distance from $fromSprite"
+    //% blockId=spriteutilextplaceanglefrom
+    //% help=github:arcade-sprite-util/docs/place-angle-from
+    //% fromSprite.shadow=variables_get
+    //% fromSprite.defl=mySprite
+    //% spriteToMove.shadow=variables_get
+    //% spriteToMove.defl=myEnemy
+    //% weight=70
+    //% group=Sprite
+    export function placeAngleFrom(spriteToMove: Sprite, angleInRadians: number, distance: number, fromSprite: Sprite) {
+        if (!fromSprite || !spriteToMove)
+            return;
+
+        spriteToMove.setPosition(
+            fromSprite.x + Math.cos(angleInRadians) * distance,
+            fromSprite.y + Math.sin(angleInRadians) * distance 
+        );
+    }
+
+    /**
      * Converts a number from radians to degrees
      */
     //% block="convert $asRadians radians to degrees"
