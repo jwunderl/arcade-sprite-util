@@ -1,4 +1,4 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.2.6/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.0.3","target":"arcade","targetVersion":"1.2.6","repo":"jwunderl/arcade-sprite-util"}
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.2.6/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.0.4","target":"arcade","targetVersion":"1.2.6","repo":"jwunderl/arcade-sprite-util"}
 // total=1169476 new=7.64% cached=86.82% other=5.53%
 (function (ectx) {
 'use strict';
@@ -385,7 +385,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P50781(s) {
+function _main___P51096(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -753,7 +753,7 @@ switch (step) {
     s.callLocIdx = 60; s.pc = 32; return s.tmp_0;
   case 32:
     r0 = s.retval;
-    s.tmp_0 = spriteutils_createRenderable__P50647_mk(s);
+    s.tmp_0 = spriteutils_createRenderable__P51052_mk(s);
     s.tmp_0.arg0 = 20;
     s.tmp_0.arg1 = inline__P39894;
     s.callLocIdx = 81; s.pc = 33; return s.tmp_0;
@@ -804,13 +804,13 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-_main___P50781.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"test.ts","functionName":"<main>","argumentNames":[]}
-_main___P50781.continuations = [  ]
+_main___P51096.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"test.ts","functionName":"<main>","argumentNames":[]}
+_main___P51096.continuations = [  ]
 
-function _main___P50781_mk(s) {
+function _main___P51096_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P50781, depth: s.depth + 1,
+        parent: s, fn: _main___P51096, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1413,14 +1413,14 @@ switch (step) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
-    s.tmp_0 = spriteutils_distanceBetween__P50542_mk(s);
+    s.tmp_0 = spriteutils_distanceBetween__P50947_mk(s);
     s.tmp_0.arg0 = globals.mySprite___37751;
     s.tmp_0.arg1 = globals.myEnemy___37750;
     s.callLocIdx = 74; s.pc = 1; return s.tmp_0;
   case 1:
     r0 = s.retval;
     globals.d___37749 = (r0);
-    s.tmp_0 = spriteutils_angleFrom__P50569_mk(s);
+    s.tmp_0 = spriteutils_angleFrom__P50974_mk(s);
     s.tmp_0.arg0 = globals.mySprite___37751;
     s.tmp_0.arg1 = globals.myEnemy___37750;
     s.callLocIdx = 75; s.pc = 2; return s.tmp_0;
@@ -1524,7 +1524,7 @@ switch (step) {
     s.callLocIdx = 87; s.pc = 2; return s.tmp_0;
   case 2:
     r0 = s.retval;
-    s.tmp_0 = spriteutils_placeAngleFrom__P50589_mk(s);
+    s.tmp_0 = spriteutils_placeAngleFrom__P50994_mk(s);
     s.tmp_0.arg0 = s.myProjectile___39949;
     s.tmp_0.arg1 = 0;
     s.tmp_0.arg2 = 0;
@@ -1532,21 +1532,21 @@ switch (step) {
     s.callLocIdx = 88; s.pc = 3; return s.tmp_0;
   case 3:
     r0 = s.retval;
-    s.tmp_0 = spriteutils_distanceBetween__P50542_mk(s);
+    s.tmp_0 = spriteutils_distanceBetween__P50947_mk(s);
     s.tmp_0.arg0 = globals.mySprite___37751;
     s.tmp_0.arg1 = globals.myEnemy___37750;
     s.callLocIdx = 89; s.pc = 4; return s.tmp_0;
   case 4:
     r0 = s.retval;
     globals.d___37749 = (r0);
-    s.tmp_0 = spriteutils_angleFrom__P50569_mk(s);
+    s.tmp_0 = spriteutils_angleFrom__P50974_mk(s);
     s.tmp_0.arg0 = globals.mySprite___37751;
     s.tmp_0.arg1 = globals.myEnemy___37750;
     s.callLocIdx = 90; s.pc = 5; return s.tmp_0;
   case 5:
     r0 = s.retval;
     globals.a___37748 = (r0);
-    s.tmp_0 = spriteutils_setVelocityAtAngle__P50617_mk(s);
+    s.tmp_0 = spriteutils_setVelocityAtAngle__P51022_mk(s);
     s.tmp_0.arg0 = s.myProjectile___39949;
     s.tmp_0.arg1 = globals.a___37748;
     s.tmp_0.arg2 = globals.d___37749;
@@ -1573,7 +1573,7 @@ const _hex39953 = pxsim.BufferMethods.createBufferFromHex("870410001000000000000
 
 
 
-function spriteutils_setVelocityAtAngle__P50617(s) {
+function spriteutils_setVelocityAtAngle__P51022(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1616,12 +1616,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-spriteutils_setVelocityAtAngle__P50617.info = {"start":3148,"length":270,"line":95,"column":4,"endLine":103,"endColumn":5,"fileName":"spriteutils.ts","functionName":"setVelocityAtAngle","argumentNames":["target","angleInRadians","speed"]}
+spriteutils_setVelocityAtAngle__P51022.info = {"start":3148,"length":270,"line":95,"column":4,"endLine":103,"endColumn":5,"fileName":"spriteutils.ts","functionName":"setVelocityAtAngle","argumentNames":["target","angleInRadians","speed"]}
 
-function spriteutils_setVelocityAtAngle__P50617_mk(s) {
+function spriteutils_setVelocityAtAngle__P51022_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: spriteutils_setVelocityAtAngle__P50617, depth: s.depth + 1,
+        parent: s, fn: spriteutils_setVelocityAtAngle__P51022, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1886,7 +1886,7 @@ function Sprite_vx__P36315_mk(s) {
 
 
 
-function spriteutils_placeAngleFrom__P50589(s) {
+function spriteutils_placeAngleFrom__P50994(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1957,12 +1957,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-spriteutils_placeAngleFrom__P50589.info = {"start":2385,"length":358,"line":75,"column":4,"endLine":83,"endColumn":5,"fileName":"spriteutils.ts","functionName":"placeAngleFrom","argumentNames":["spriteToMove","angleInRadians","distance","fromSprite"]}
+spriteutils_placeAngleFrom__P50994.info = {"start":2385,"length":358,"line":75,"column":4,"endLine":83,"endColumn":5,"fileName":"spriteutils.ts","functionName":"placeAngleFrom","argumentNames":["spriteToMove","angleInRadians","distance","fromSprite"]}
 
-function spriteutils_placeAngleFrom__P50589_mk(s) {
+function spriteutils_placeAngleFrom__P50994_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: spriteutils_placeAngleFrom__P50589, depth: s.depth + 1,
+        parent: s, fn: spriteutils_placeAngleFrom__P50994, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -5752,7 +5752,7 @@ function Math_clamp__P34408_mk(s) {
 
 
 
-function spriteutils_angleFrom__P50569(s) {
+function spriteutils_angleFrom__P50974(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5821,12 +5821,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-spriteutils_angleFrom__P50569.info = {"start":1673,"length":178,"line":54,"column":4,"endLine":60,"endColumn":5,"fileName":"spriteutils.ts","functionName":"angleFrom","argumentNames":["a","b"]}
+spriteutils_angleFrom__P50974.info = {"start":1673,"length":178,"line":54,"column":4,"endLine":60,"endColumn":5,"fileName":"spriteutils.ts","functionName":"angleFrom","argumentNames":["a","b"]}
 
-function spriteutils_angleFrom__P50569_mk(s) {
+function spriteutils_angleFrom__P50974_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: spriteutils_angleFrom__P50569, depth: s.depth + 1,
+        parent: s, fn: spriteutils_angleFrom__P50974, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -5850,7 +5850,7 @@ function spriteutils_angleFrom__P50569_mk(s) {
 
 
 
-function spriteutils_distanceBetween__P50542(s) {
+function spriteutils_distanceBetween__P50947(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5925,12 +5925,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-spriteutils_distanceBetween__P50542.info = {"start":1088,"length":168,"line":36,"column":4,"endLine":39,"endColumn":5,"fileName":"spriteutils.ts","functionName":"distanceBetween","argumentNames":["a","b"]}
+spriteutils_distanceBetween__P50947.info = {"start":1088,"length":168,"line":36,"column":4,"endLine":39,"endColumn":5,"fileName":"spriteutils.ts","functionName":"distanceBetween","argumentNames":["a","b"]}
 
-function spriteutils_distanceBetween__P50542_mk(s) {
+function spriteutils_distanceBetween__P50947_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: spriteutils_distanceBetween__P50542, depth: s.depth + 1,
+        parent: s, fn: spriteutils_distanceBetween__P50947, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -5957,7 +5957,7 @@ function spriteutils_distanceBetween__P50542_mk(s) {
 
 
 
-function spriteutils_createRenderable__P50647(s) {
+function spriteutils_createRenderable__P51052(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5983,12 +5983,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-spriteutils_createRenderable__P50647.info = {"start":4493,"length":137,"line":138,"column":4,"endLine":140,"endColumn":5,"fileName":"spriteutils.ts","functionName":"createRenderable","argumentNames":["index","handler"]}
+spriteutils_createRenderable__P51052.info = {"start":4493,"length":137,"line":138,"column":4,"endLine":140,"endColumn":5,"fileName":"spriteutils.ts","functionName":"createRenderable","argumentNames":["index","handler"]}
 
-function spriteutils_createRenderable__P50647_mk(s) {
+function spriteutils_createRenderable__P51052_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: spriteutils_createRenderable__P50647, depth: s.depth + 1,
+        parent: s, fn: spriteutils_createRenderable__P51052, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   arg0: undefined,
@@ -39941,5 +39941,5 @@ const sprites_StaticObstacle__C36432_VT = mkVTable({
 
 const breakpoints = setupDebugger(1, ["d___37749","mySprite___37751","myEnemy___37750","a___37748"])
 
-return _main___P50781
+return _main___P51096
 })
