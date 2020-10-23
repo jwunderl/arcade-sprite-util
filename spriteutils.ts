@@ -91,7 +91,7 @@ namespace spriteutils {
     //% help=github:arcade-sprite-util/docs/set-velocity-at-angle
     //% target.shadow=variables_get
     //% target.defl=mySprite
-    //% weight=70
+    //% weight=60
     //% group=Sprite
     export function setVelocityAtAngle(target: Sprite, angleInRadians: number, speed: number) {
         if (!target)
