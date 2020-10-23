@@ -15,7 +15,8 @@
         "docs/is-destroyed.md",
         "docs/distance-between.md",
         "docs/angle-from.md",
-        "docs/place-angle-from.md"
+        "docs/place-angle-from.md",
+        "docs/set-velocity-at-angle.md"
     ],
     "testFiles": [
         "test.ts"

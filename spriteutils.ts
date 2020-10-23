@@ -84,6 +84,26 @@ namespace spriteutils {
     }
 
     /**
+     * Sets the velocity of the given sprite to be at a given speed in the given direction
+     */
+    //% block="set $target velocity at angle $angleInRadians speed $speed"
+    //% blockId=spriteutilextsetspeedanglefrom
+    //% help=github:arcade-sprite-util/docs/set-velocity-at-angle
+    //% target.shadow=variables_get
+    //% target.defl=mySprite
+    //% weight=70
+    //% group=Sprite
+    export function setVelocityAtAngle(target: Sprite, angleInRadians: number, speed: number) {
+        if (!target)
+            return;
+
+        target.setVelocity(
+            Math.cos(angleInRadians) * speed,
+            Math.sin(angleInRadians) * speed 
+        );
+    }
+
+    /**
      * Converts a number from radians to degrees
      */
     //% block="convert $asRadians radians to degrees"

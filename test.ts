@@ -45,3 +45,29 @@ myEnemy = sprites.create(img`
     `, SpriteKind.Player)
 myEnemy.setPosition(156, 112)
 controller.moveSprite(myEnemy)
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, () => {
+    const myProjectile = sprites.create(img`
+        . . . . . . . . . . . . . . . .
+        . 3 . . . . . . . . . . . . 3 .
+        . . 3 . . . . . . . . . 3 3 . .
+        . . . 3 . . . . . . . 3 . . . .
+        . . . . 3 3 . . . 3 3 . . . . .
+        . . . . . . 3 . 3 . . . . . . .
+        . . . . . . . 3 . . . . . . . .
+        . . . . . . 3 . 3 . . . . . . .
+        . . . . . 3 3 . . 3 . . . . . .
+        . . . . . 3 . . . . 3 3 . . . .
+        . . . . 3 . . . . . . . 3 3 . .
+        . . . 3 3 . . . . . . . . . 3 .
+        . . . 3 . . . . . . . . . . 3 .
+        . . . . . . . . . . . . . . . 3
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `, SpriteKind.Player);
+    myProjectile.setFlag(SpriteFlag.AutoDestroy, true);
+    spriteutils.placeAngleFrom(myProjectile, 0, 0, mySprite);
+    d = spriteutils.distanceBetween(mySprite, myEnemy)
+    a = spriteutils.angleFrom(mySprite, myEnemy)
+    spriteutils.setVelocityAtAngle(myProjectile, a, d)
+})
