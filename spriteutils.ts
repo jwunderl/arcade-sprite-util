@@ -134,6 +134,7 @@ namespace spriteutils {
     //% blockId=spriteutilextcreaterenderable
     //% help=github:arcade-sprite-util/docs/create-renderable
     //% draggableParameters="reporter"
+    //% blockAllowMultiple=1
     //% weight=70
     //% group=General
     export function createRenderable(index: number, handler: (screen: Image) => void) {
