@@ -154,7 +154,11 @@ namespace spriteutils {
     //% help=github:arcade-sprite-util/docs/draw-transparent-image
     //% weight=65
     //% group=General
+    //% inlineInputMode=inline
     export function drawTransparentImage(src: Image, to: Image, x: number, y: number) {
+        if (!src || !to) {
+            return;
+        }
         to.drawTransparentImage(src, x, y);
     }
 
