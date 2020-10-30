@@ -16,14 +16,15 @@
         "docs/distance-between.md",
         "docs/angle-from.md",
         "docs/place-angle-from.md",
-        "docs/set-velocity-at-angle.md"
+        "docs/set-velocity-at-angle.md",
+        "docs/draw-transparent-image.md"
     ],
     "testFiles": [
         "test.ts"
     ],
     "public": true,
     "targetVersions": {
-        "target": "1.2.6",
+        "target": "1.3.13",
         "targetId": "arcade"
     },
     "supportedTargets": [

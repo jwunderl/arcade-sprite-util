@@ -142,7 +142,24 @@ namespace spriteutils {
     }
 
     /**
-     * Set 
+     * Draw an image (src) onto the target (to), with the top left at (x, y)
+     */
+    //% block="draw $src to $to at x $x y $y"
+    //% blockId=spriteutilextdrawtransparentimg
+    //% src.shadow=screen_image_picker
+    //% to.shadow=variables_get
+    //% to.defl=myImage
+    //% x.shadow="positionPicker"
+    //% y.shadow="positionPicker"
+    //% help=github:arcade-sprite-util/docs/draw-transparent-image
+    //% weight=65
+    //% group=General
+    export function drawTransparentImage(src: Image, to: Image, x: number, y: number) {
+        to.drawTransparentImage(src, x, y);
+    }
+
+    /**
+     * Set whether the console will be displayed on the screen (on) or not (off) 
      */
     //% block="console overlay $on"
     //% on.shadow=toggleOnOff
