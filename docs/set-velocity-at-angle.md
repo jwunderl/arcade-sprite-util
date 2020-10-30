@@ -1,6 +1,6 @@
 # set velocity at angle
 
-Sets the velocity of the given sprite to be at a given speed in the given direction
+Sets the velocity of the given sprite to be at a given speed at the given angle (in radians)
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
