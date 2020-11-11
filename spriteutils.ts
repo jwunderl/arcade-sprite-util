@@ -174,4 +174,30 @@ namespace spriteutils {
     export function setConsoleOverlay(on: boolean) {
         game.consoleOverlay.setVisible(on);
     }
+
+    /**
+     * Set the icon used to display life
+     */
+    //% block="set life image $im"
+    //% blockId=spriteutilextsetlifeimage
+    //% im.shadow=life_image_picker
+    //% help=github:arcade-sprite-util/docs/set-life-image
+    //% weight=55
+    //% group=General
+    export function setLifeImage(im: Image) {
+        info.setLifeImage(im);
+    }
+
+    //% blockId=life_image_picker block="%img"
+    //% shim=TD_ID
+    //% img.fieldEditor="sprite"
+    //% img.fieldOptions.taggedTemplate="img"
+    //% img.fieldOptions.decompileIndirectFixedInstances="true"
+    //% img.fieldOptions.sizes="7,8"
+    //% img.fieldOptions.filter="!dialog !background"
+    //% weight=100 group="Create"
+    //% blockHidden=1 duplicateShadowOnDrag
+    export function _lifeImage(img: Image) {
+        return img;
+    }
 }
