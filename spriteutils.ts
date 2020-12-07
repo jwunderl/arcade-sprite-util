@@ -163,6 +163,29 @@ namespace spriteutils {
     }
 
     /**
+     * Draw a circle centered at (cx, cy) with radius r of the given color
+     */
+    //% block="draw circle in $to at cx $cx cy $cy radius $r color $col"
+    //% blockId=spriteutilextdrawcircle
+    //% to.shadow=variables_get
+    //% to.defl=myImage
+    //% col.shadow=colorindexpicker
+    //% col.defl=3
+    //% cx.min=0 cx.max=160 cx.defl=80
+    //% cy.min=0 cy.max=120 cy.defl=60
+    //% r.min=0 r.max=40 r.defl=5
+    //% help=github:arcade-sprite-util/docs/draw-circle
+    //% weight=64
+    //% group=General
+    export function drawCircle(to: Image, cx: number, cy: number, r: number, col: number) {
+        if (!to) {
+            return;
+        }
+        to.drawCircle(cx, cy, r, col);
+    }
+
+
+    /**
      * Set whether the console will be displayed on the screen (on) or not (off) 
      */
     //% block="console overlay $on"
