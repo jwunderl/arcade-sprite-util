@@ -223,4 +223,15 @@ namespace spriteutils {
     export function _lifeImage(img: Image) {
         return img;
     }
+
+    //% blockId=spriteutilextroundwithprecision
+    //% block="round $x to $digitsAfterDecimal decimal places"
+    //% x.defl=3.14159
+    //% digitsAfterDecimal.defl=2
+    //% weight=50
+    //% group=General
+    //% help=github:arcade-sprite-util/docs/round-with-precision
+    export function roundWithPrecision(x: number, digitsAfterDecimal: number) {
+        return Math.roundWithPrecision(x, digitsAfterDecimal);
+    }
 }

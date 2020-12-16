@@ -19,14 +19,15 @@
         "docs/set-velocity-at-angle.md",
         "docs/draw-transparent-image.md",
         "docs/set-life-image.md",
-        "docs/draw-circle.md"
+        "docs/draw-circle.md",
+        "docs/round-with-precision.md"
     ],
     "testFiles": [
         "test.ts"
     ],
     "public": true,
     "targetVersions": {
-        "target": "1.2.10",
+        "target": "1.2.16",
         "targetId": "arcade"
     },
     "supportedTargets": [
