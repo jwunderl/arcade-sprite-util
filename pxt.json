@@ -20,7 +20,8 @@
         "docs/draw-transparent-image.md",
         "docs/set-life-image.md",
         "docs/draw-circle.md",
-        "docs/round-with-precision.md"
+        "docs/round-with-precision.md",
+        "docs/get-sprites-within.md"
     ],
     "testFiles": [
         "test.ts"
