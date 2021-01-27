@@ -60,7 +60,7 @@ namespace spriteutils {
             return (distanceBetween(a, sprite) - distanceBetween(b, sprite));
         })
 
-        return sortArray ? sortArray : [];
+        return sortArray;
     }
 
     /**
