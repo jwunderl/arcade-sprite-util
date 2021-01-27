@@ -51,9 +51,8 @@ namespace spriteutils {
     //% group=Sprite
     export function getSpritesWithin(kind: number, distance: number, sprite: Sprite): Sprite[] {
         let allSprites = sprites.allOfKind(kind);
-        let sortArray: Sprite[] = [];
         let numItems = 0;
-        sortArray = allSprites.filter(function(value: Sprite, index: number) {
+        let sortArray = allSprites.filter(function(value: Sprite, index: number) {
             return distanceBetween(value, sprite) <= distance;
         })
 
