@@ -40,6 +40,39 @@ namespace spriteutils {
     }
 
     /**
+     * Returns array of sprites of kind that are within a specified distance.
+     */
+    //% block="get all sprites of kind $kind within $distance pixels from $sprite"
+    //% kind.shadow=spritekind
+    //% distance.defl=50
+    //% sprite.shadow=variables_get
+    //% sprite.defl=mySprite
+    export function getSpritesWithin(kind: number, distance: number, sprite: Sprite) : Sprite[] {
+        let allSprites = sprites.allOfKind(kind);
+        let sortArray : Sprite[] = [];
+        let numItems = 0;
+        allSprites.forEach(function(value: Sprite, index: number) {
+            if (distanceBetween(value, sprite) <= distance) {
+                sortArray.push(value);
+            }
+        })
+
+        sortArray = sortArray.sort((a, b)=>{
+            let distanceA = (distanceBetween(a, sprite));
+            let distanceB = distanceBetween(b, sprite)
+            if (distanceA < distanceB) {
+                return -1;
+            } else if (distanceA > distanceB) {
+                return 1;
+            } else {
+                return 0;
+            }
+        })
+
+        return sortArray? sortArray:[];
+    }
+
+    /**
      * Returns the angle between the center of two sprites in radians.
      * If either sprite is undefined returns 0.
      */
