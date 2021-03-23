@@ -20,14 +20,15 @@
         "docs/draw-transparent-image.md",
         "docs/set-life-image.md",
         "docs/draw-circle.md",
-        "docs/round-with-precision.md"
+        "docs/round-with-precision.md",
+        "docs/fill-circle.md"
     ],
     "testFiles": [
         "test.ts"
     ],
     "public": true,
     "targetVersions": {
-        "target": "1.2.16",
+        "target": "1.4.28",
         "targetId": "arcade"
     },
     "supportedTargets": [

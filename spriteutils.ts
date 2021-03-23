@@ -184,6 +184,28 @@ namespace spriteutils {
         to.drawCircle(cx, cy, r, col);
     }
 
+    /**
+     * Draw a filled circle centered at (cx, cy) with radius r of the given color
+     */
+    //% block="fill circle in $to at cx $cx cy $cy radius $r color $col"
+    //% blockId=spriteutilextdrawfilledcircle
+    //% to.shadow=variables_get
+    //% to.defl=myImage
+    //% col.shadow=colorindexpicker
+    //% col.defl=3
+    //% cx.min=0 cx.max=160 cx.defl=80
+    //% cy.min=0 cy.max=120 cy.defl=60
+    //% r.min=0 r.max=40 r.defl=5
+    //% help=github:arcade-sprite-util/docs/fill-circle
+    //% weight=63
+    //% group=General
+    export function fillCircle(to: Image, cx: number, cy: number, r: number, col: number) {
+        if (!to) {
+            return;
+        }
+        to.fillCircle(cx, cy, r, col);
+    }
+
 
     /**
      * Set whether the console will be displayed on the screen (on) or not (off) 
