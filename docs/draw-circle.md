@@ -1,6 +1,6 @@
 # Draw circle
 
-Draws an image onto another image, with the x and y set to the top left corner of the source image
+Draws a circle onto an image, with the x and y set to the top left corner of the source image
 
 ```blocks
 spriteutils.createRenderable(20, function (target) {
