@@ -7,7 +7,7 @@
 namespace spriteutils {
 
     /**
-     * Returns true of the given sprite does not exist,
+     * Returns true if the given sprite does not exist,
      * or is destroyed, and false otherwise.
      */
     //% block="$sprite is destroyed"
@@ -37,6 +37,30 @@ namespace spriteutils {
     export function distanceBetween(a: Sprite, b: Sprite): number {
         if (!a || !b) return 0;
         return Math.sqrt(((a.x - b.x) ** 2) + ((a.y - b.y) ** 2));
+    }
+
+    /**
+     * Returns array of sprites of kind that are within a specified distance.
+     */
+    //% block="get all sprites of kind $kind within $distance pixels from $sprite"
+    //% kind.shadow=spritekind
+    //% distance.defl=50
+    //% sprite.shadow=variables_get
+    //% sprite.defl=mySprite
+    //% weight=85
+    //% group=Sprite
+    export function getSpritesWithin(kind: number, distance: number, sprite: Sprite): Sprite[] {
+        let allSprites = sprites.allOfKind(kind);
+        let numItems = 0;
+        let sortArray = allSprites.filter(function(value: Sprite, index: number) {
+            return distanceBetween(value, sprite) <= distance;
+        })
+
+        sortArray = sortArray.sort((a, b)=>{
+            return (distanceBetween(a, sprite) - distanceBetween(b, sprite));
+        })
+
+        return sortArray;
     }
 
     /**

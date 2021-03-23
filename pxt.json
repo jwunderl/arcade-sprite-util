@@ -1,6 +1,6 @@
 {
     "name": "arcade-sprite-util",
-    "version": "0.0.11",
+    "version": "0.1.0",
     "description": "",
     "dependencies": {
         "device": "*"
@@ -21,7 +21,8 @@
         "docs/set-life-image.md",
         "docs/draw-circle.md",
         "docs/round-with-precision.md",
-        "docs/fill-circle.md"
+        "docs/fill-circle.md",
+        "docs/get-sprites-within.md"
     ],
     "testFiles": [
         "test.ts"
