@@ -30,7 +30,7 @@
     ],
     "public": true,
     "targetVersions": {
-        "target": "1.4.28",
+        "target": "1.4.41",
         "targetId": "arcade"
     },
     "supportedTargets": [
