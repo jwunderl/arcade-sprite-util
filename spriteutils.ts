@@ -5,6 +5,41 @@
 //% block="Sprite Utils"
 //% groups='["Sprite", "General"]'
 namespace spriteutils {
+    export enum UpdatePriority {
+        //% block="updates the controller"
+        Controller = scene.CONTROLLER_PRIORITY,
+        //% block="updates the controller extension"
+        UpdateController = scene.UPDATE_CONTROLLER_PRIORITY,
+        //% block="updates following sprites"
+        FollowSprite = scene.FOLLOW_SPRITE_PRIORITY,
+        //% block="updates controller sprites"
+        ControllerSprites = scene.CONTROLLER_SPRITES_PRIORITY,
+        //% block="runs physics"
+        Physics = scene.PHYSICS_PRIORITY,
+        //% block="updates animations"
+        Animation = scene.ANIMATION_UPDATE_PRIORITY,
+        //% block="runs on game update interval"
+        UpdateInterval = scene.UPDATE_INTERVAL_PRIORITY,
+        //% block="runs on game update"
+        Update = scene.UPDATE_PRIORITY,
+        //% block="updates the camera"
+        Camera = scene.PRE_RENDER_UPDATE_PRIORITY,
+        //% block="renders background image"
+        RenderBackground = scene.RENDER_BACKGROUND_PRIORITY,
+        //% block="renders all sprites"
+        RenderSprites = scene.RENDER_SPRITES_PRIORITY,
+        //% block="renders diagnostics"
+        RenderDiagnostics = scene.RENDER_DIAGNOSTICS_PRIORITY,
+        //% block="updates the screen"
+        UpdateScreen = scene.UPDATE_SCREEN_PRIORITY
+    }
+
+    export enum UpdatePriorityModifier {
+        //% block="before"
+        Before,
+        //% block="after"
+        After
+    }
 
     /**
      * Returns true if the given sprite does not exist,
@@ -103,7 +138,7 @@ namespace spriteutils {
 
         spriteToMove.setPosition(
             fromSprite.x + Math.cos(angleInRadians) * distance,
-            fromSprite.y + Math.sin(angleInRadians) * distance 
+            fromSprite.y + Math.sin(angleInRadians) * distance
         );
     }
 
@@ -123,7 +158,7 @@ namespace spriteutils {
 
         target.setVelocity(
             Math.cos(angleInRadians) * speed,
-            Math.sin(angleInRadians) * speed 
+            Math.sin(angleInRadians) * speed
         );
     }
 
@@ -232,7 +267,7 @@ namespace spriteutils {
 
 
     /**
-     * Set whether the console will be displayed on the screen (on) or not (off) 
+     * Set whether the console will be displayed on the screen (on) or not (off)
      */
     //% block="console overlay $on"
     //% on.shadow=toggleOnOff
@@ -279,5 +314,15 @@ namespace spriteutils {
     //% help=github:arcade-sprite-util/docs/round-with-precision
     export function roundWithPrecision(x: number, digitsAfterDecimal: number) {
         return Math.roundWithPrecision(x, digitsAfterDecimal);
+    }
+
+    //% blockId=spriteutiladdeventhandler
+    //% block="run code $modifier game engine $priority"
+    //% group=General
+    //% weight=10
+    //% help=github:arcade-sprite-util/docs/add-event-handler
+    export function addEventHandler(modifier: UpdatePriorityModifier, priority: UpdatePriority, callback: () => void) {
+        const handlerPriority = priority + (modifier === UpdatePriorityModifier.Before ? -0.5 : 0.5);
+        game.currentScene().eventContext.registerFrameHandler(handlerPriority, callback);
     }
 }
