@@ -44,6 +44,8 @@ myEnemy = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
 myEnemy.setPosition(156, 112)
+
+myEnemy.say(spriteutils.roundWithPrecision(16 / 3, 5))
 controller.moveSprite(myEnemy)
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, () => {

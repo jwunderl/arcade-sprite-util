@@ -312,8 +312,27 @@ namespace spriteutils {
     //% weight=50
     //% group=General
     //% help=github:arcade-sprite-util/docs/round-with-precision
-    export function roundWithPrecision(x: number, digitsAfterDecimal: number) {
-        return Math.roundWithPrecision(x, digitsAfterDecimal);
+    export function roundWithPrecision(x: number, digitsAfterDecimal: number): string {
+        let rounded = "" + Math.roundWithPrecision(x, digitsAfterDecimal);
+        if (digitsAfterDecimal > 0) {
+            const indDec = rounded.indexOf(".");
+            let padZeros = 0;
+            if (indDec === -1) {
+                padZeros = digitsAfterDecimal;
+                rounded += ".";
+            } else {
+                const currDecimals = rounded.length - indDec;
+                if (currDecimals > digitsAfterDecimal) {
+                    rounded = rounded.slice(0, indDec + 1 + digitsAfterDecimal);
+                } else if (currDecimals < digitsAfterDecimal) {
+                    padZeros = digitsAfterDecimal - currDecimals;
+                }
+            }
+            for (let i = 0; i < padZeros; ++i) {
+                rounded += "0";
+            }
+        }
+        return rounded;
     }
 
     //% blockId=spriteutiladdeventhandler
@@ -325,4 +344,6 @@ namespace spriteutils {
         const handlerPriority = priority + (modifier === UpdatePriorityModifier.Before ? -0.5 : 0.5);
         game.currentScene().eventContext.registerFrameHandler(handlerPriority, callback);
     }
+
+
 }

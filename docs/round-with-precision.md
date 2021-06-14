@@ -1,6 +1,6 @@
 # round With Precision
 
-Returns a number (x) rounded to the given number of decimal places.
+Returns a string of (x) rounded to the given number of decimal places.
 
 ```blocks
 for (let i = 0; i < 5; i++) {
