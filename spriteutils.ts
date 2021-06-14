@@ -346,4 +346,20 @@ namespace spriteutils {
     }
 
 
+    /**
+     * TODO: add help docs
+     */
+    //% blockId=spriteutiljumpimpulse
+    //% block="make $sprite jump $pixels pixels"
+    //% pixels.defl=34
+    //% pixels.min=0
+    //% pixels.max=120
+    //% sprite.shadow=variables_get
+    //% sprite.defl=mySprite
+    //% group=Sprite
+    //% weight=70
+    export function jumpImpulse(sprite: Sprite, pixels: number) {
+        const g = sprite.ay || 200;
+        sprite.vy = -Math.sqrt(2 * pixels * g);
+    }
 }
