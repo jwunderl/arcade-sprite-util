@@ -1,5 +1,5 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.4.44/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.2.1","target":"arcade","targetVersion":"1.4.44","repo":"jwunderl/arcade-sprite-util"}
-// total=1234014 new=7.62% cached=87.09% other=5.29%
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.4.44/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.2.2","target":"arcade","targetVersion":"1.4.44","repo":"jwunderl/arcade-sprite-util"}
+// total=1234094 new=7.63% cached=87.08% other=5.29%
 (function (ectx) {
 'use strict';
 const runtime = ectx.runtime;
@@ -392,7 +392,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P67714(s) {
+function _main___P103250(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -756,7 +756,7 @@ switch (step) {
     s.callLocIdx = 59; s.pc = 32; return s.tmp_0;
   case 32:
     r0 = s.retval;
-    s.tmp_0 = spriteutils_createRenderable__P50698_mk(s);
+    s.tmp_0 = spriteutils_createRenderable__P103024_mk(s);
     s.tmp_0.arg0 = 20;
     s.tmp_0.arg1 = inline__P53508;
     s.callLocIdx = 82; s.pc = 33; return s.tmp_0;
@@ -791,7 +791,7 @@ switch (step) {
     r0 = s.retval;
     s.tmp_0 = Sprite_say__P48980_mk(s);
     s.tmp_0.arg0 = globals.myEnemy___50709;
-    s.tmp_1 = spriteutils_roundWithPrecision__P50705_mk(s);
+    s.tmp_1 = spriteutils_roundWithPrecision__P103087_mk(s);
     s.tmp_1.arg0 = 5.333333333333333;
     s.tmp_1.arg1 = 5;
     s.callLocIdx = 86; s.pc = 38; return s.tmp_1;
@@ -822,13 +822,13 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-_main___P67714.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"test.ts","functionName":"<main>","argumentNames":[]}
-_main___P67714.continuations = [  ]
+_main___P103250.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"test.ts","functionName":"<main>","argumentNames":[]}
+_main___P103250.continuations = [  ]
 
-function _main___P67714_mk(s) {
+function _main___P103250_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P67714, depth: s.depth + 1,
+        parent: s, fn: _main___P103250, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1431,14 +1431,14 @@ switch (step) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
-    s.tmp_0 = spriteutils_distanceBetween__P50691_mk(s);
+    s.tmp_0 = spriteutils_distanceBetween__P102884_mk(s);
     s.tmp_0.arg0 = globals.mySprite___50710;
     s.tmp_0.arg1 = globals.myEnemy___50709;
     s.callLocIdx = 75; s.pc = 1; return s.tmp_0;
   case 1:
     r0 = s.retval;
     globals.d___50708 = (r0);
-    s.tmp_0 = spriteutils_angleFrom__P50693_mk(s);
+    s.tmp_0 = spriteutils_angleFrom__P102946_mk(s);
     s.tmp_0.arg0 = globals.mySprite___50710;
     s.tmp_0.arg1 = globals.myEnemy___50709;
     s.callLocIdx = 76; s.pc = 2; return s.tmp_0;
@@ -1542,7 +1542,7 @@ switch (step) {
     s.callLocIdx = 90; s.pc = 2; return s.tmp_0;
   case 2:
     r0 = s.retval;
-    s.tmp_0 = spriteutils_placeAngleFrom__P50694_mk(s);
+    s.tmp_0 = spriteutils_placeAngleFrom__P102966_mk(s);
     s.tmp_0.arg0 = s.myProjectile___53570;
     s.tmp_0.arg1 = 0;
     s.tmp_0.arg2 = 0;
@@ -1550,21 +1550,21 @@ switch (step) {
     s.callLocIdx = 91; s.pc = 3; return s.tmp_0;
   case 3:
     r0 = s.retval;
-    s.tmp_0 = spriteutils_distanceBetween__P50691_mk(s);
+    s.tmp_0 = spriteutils_distanceBetween__P102884_mk(s);
     s.tmp_0.arg0 = globals.mySprite___50710;
     s.tmp_0.arg1 = globals.myEnemy___50709;
     s.callLocIdx = 92; s.pc = 4; return s.tmp_0;
   case 4:
     r0 = s.retval;
     globals.d___50708 = (r0);
-    s.tmp_0 = spriteutils_angleFrom__P50693_mk(s);
+    s.tmp_0 = spriteutils_angleFrom__P102946_mk(s);
     s.tmp_0.arg0 = globals.mySprite___50710;
     s.tmp_0.arg1 = globals.myEnemy___50709;
     s.callLocIdx = 93; s.pc = 5; return s.tmp_0;
   case 5:
     r0 = s.retval;
     globals.a___50707 = (r0);
-    s.tmp_0 = spriteutils_setVelocityAtAngle__P50695_mk(s);
+    s.tmp_0 = spriteutils_setVelocityAtAngle__P102994_mk(s);
     s.tmp_0.arg0 = s.myProjectile___53570;
     s.tmp_0.arg1 = globals.a___50707;
     s.tmp_0.arg2 = globals.d___50708;
@@ -1591,7 +1591,7 @@ const _hex53574 = pxsim.BufferMethods.createBufferFromHex("870410001000000000000
 
 
 
-function spriteutils_setVelocityAtAngle__P50695(s) {
+function spriteutils_setVelocityAtAngle__P102994(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1634,12 +1634,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-spriteutils_setVelocityAtAngle__P50695.info = {"start":5405,"length":269,"line":154,"column":4,"endLine":162,"endColumn":5,"fileName":"spriteutils.ts","functionName":"setVelocityAtAngle","argumentNames":["target","angleInRadians","speed"]}
+spriteutils_setVelocityAtAngle__P102994.info = {"start":5405,"length":269,"line":154,"column":4,"endLine":162,"endColumn":5,"fileName":"spriteutils.ts","functionName":"setVelocityAtAngle","argumentNames":["target","angleInRadians","speed"]}
 
-function spriteutils_setVelocityAtAngle__P50695_mk(s) {
+function spriteutils_setVelocityAtAngle__P102994_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: spriteutils_setVelocityAtAngle__P50695, depth: s.depth + 1,
+        parent: s, fn: spriteutils_setVelocityAtAngle__P102994, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1904,7 +1904,7 @@ function Sprite_vx__P48935_mk(s) {
 
 
 
-function spriteutils_placeAngleFrom__P50694(s) {
+function spriteutils_placeAngleFrom__P102966(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1975,12 +1975,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-spriteutils_placeAngleFrom__P50694.info = {"start":4643,"length":357,"line":134,"column":4,"endLine":142,"endColumn":5,"fileName":"spriteutils.ts","functionName":"placeAngleFrom","argumentNames":["spriteToMove","angleInRadians","distance","fromSprite"]}
+spriteutils_placeAngleFrom__P102966.info = {"start":4643,"length":357,"line":134,"column":4,"endLine":142,"endColumn":5,"fileName":"spriteutils.ts","functionName":"placeAngleFrom","argumentNames":["spriteToMove","angleInRadians","distance","fromSprite"]}
 
-function spriteutils_placeAngleFrom__P50694_mk(s) {
+function spriteutils_placeAngleFrom__P102966_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: spriteutils_placeAngleFrom__P50694, depth: s.depth + 1,
+        parent: s, fn: spriteutils_placeAngleFrom__P102966, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -3222,7 +3222,7 @@ function controller_addController__P50963_mk(s) {
 
 
 
-function spriteutils_roundWithPrecision__P50705(s) {
+function spriteutils_roundWithPrecision__P103087(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -3232,11 +3232,11 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.rounded___53421 = undefined;
-    s.indDec___53432 = undefined;
-    s.padZeros___53438 = undefined;
-    s.currDecimals___53451 = undefined;
-    s.i___53474 = undefined;
+    s.rounded___103090 = undefined;
+    s.indDec___103101 = undefined;
+    s.padZeros___103107 = undefined;
+    s.currDecimals___103120 = undefined;
+    s.i___103143 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
@@ -3261,106 +3261,106 @@ switch (step) {
     r0 = s.retval;
     s.tmp_1 = r0;
     r0 = pxsim_String__concat(s.tmp_0, s.tmp_1);
-    s.rounded___53421 = (r0);
+    s.rounded___103090 = (r0);
     r0 = (s.arg1 > 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 9; continue; }
-    r0 = pxsim_String_.indexOf(s.rounded___53421, ".", undefined);
-    s.indDec___53432 = (r0);
-    s.padZeros___53438 = (0);
-    r0 = (s.indDec___53432 === -1);
+    r0 = pxsim_String_.indexOf(s.rounded___103090, ".", undefined);
+    s.indDec___103101 = (r0);
+    s.padZeros___103107 = (0);
+    r0 = (s.indDec___103101 === -1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 1; continue; }
-    s.padZeros___53438 = (s.arg1);
-    if ((s.rounded___53421) && (s.rounded___53421).vtable) {
+    s.padZeros___103107 = (s.arg1);
+    if ((s.rounded___103090) && (s.rounded___103090).vtable) {
     setupResume(s, 13);
-    pxsim_String__stringConv(s.rounded___53421);
+    pxsim_String__stringConv(s.rounded___103090);
     checkResumeConsumed();
     return;
-    } else { s.retval = (s.rounded___53421) + ""; }
+    } else { s.retval = (s.rounded___103090) + ""; }
   case 13:
     r0 = s.retval;
     s.tmp_0 = r0;
     r0 = pxsim_String__concat(s.tmp_0, ".");
-    s.rounded___53421 = (r0);
+    s.rounded___103090 = (r0);
     { step = 6; continue; }
   case 1:
-    r0 = pxsim_String_.length(s.rounded___53421);
+    r0 = pxsim_String_.length(s.rounded___103090);
     s.tmp_0 = r0;
-    r0 = (s.tmp_0 - s.indDec___53432);
-    s.currDecimals___53451 = (r0);
-    r0 = (s.currDecimals___53451 > s.arg1);
+    r0 = (s.tmp_0 - s.indDec___103101);
+    s.currDecimals___103120 = (r0);
+    r0 = (s.currDecimals___103120 > s.arg1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 2; continue; }
     s.tmp_1 = helpers_stringSlice__P47004_mk(s);
-    s.tmp_1.arg0 = s.rounded___53421;
+    s.tmp_1.arg0 = s.rounded___103090;
     s.tmp_1.arg1 = 0;
-    r0 = (s.indDec___53432 + 1);
+    r0 = (s.indDec___103101 + 1);
     s.tmp_2 = r0;
     r0 = (s.tmp_2 + s.arg1);
     s.tmp_1.arg2 = r0;
     s.callLocIdx = 74; s.pc = 14; return s.tmp_1;
   case 14:
     r0 = s.retval;
-    s.rounded___53421 = (r0);
+    s.rounded___103090 = (r0);
     { step = 5; continue; }
   case 2:
-    r0 = (s.currDecimals___53451 < s.arg1);
+    r0 = (s.currDecimals___103120 < s.arg1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 3; continue; }
-    r0 = (s.arg1 - s.currDecimals___53451);
-    s.padZeros___53438 = (r0);
+    r0 = (s.arg1 - s.currDecimals___103120);
+    s.padZeros___103107 = (r0);
   case 3:
   case 4:
   case 5:
   case 6:
-    s.i___53474 = (0);
+    s.i___103143 = (0);
   case 7:
-    r0 = (s.i___53474 < s.padZeros___53438);
+    r0 = (s.i___103143 < s.padZeros___103107);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 8; continue; }
-    if ((s.rounded___53421) && (s.rounded___53421).vtable) {
+    if ((s.rounded___103090) && (s.rounded___103090).vtable) {
     setupResume(s, 15);
-    pxsim_String__stringConv(s.rounded___53421);
+    pxsim_String__stringConv(s.rounded___103090);
     checkResumeConsumed();
     return;
-    } else { s.retval = (s.rounded___53421) + ""; }
+    } else { s.retval = (s.rounded___103090) + ""; }
   case 15:
     r0 = s.retval;
     s.tmp_1 = r0;
     r0 = pxsim_String__concat(s.tmp_1, "0");
-    s.rounded___53421 = (r0);
-    r0 = (s.i___53474 + 1);
-    s.i___53474 = (r0);
+    s.rounded___103090 = (r0);
+    r0 = (s.i___103143 + 1);
+    s.i___103143 = (r0);
     { step = 7; continue; }
   case 8:
   case 9:
   case 10:
-    r0 = s.rounded___53421;
+    r0 = s.rounded___103090;
     return leave(s, r0)
   default: oops()
 } } }
-spriteutils_roundWithPrecision__P50705.info = {"start":10533,"length":905,"line":314,"column":4,"endLine":335,"endColumn":5,"fileName":"spriteutils.ts","functionName":"roundWithPrecision","argumentNames":["x","digitsAfterDecimal"]}
+spriteutils_roundWithPrecision__P103087.info = {"start":10533,"length":905,"line":314,"column":4,"endLine":335,"endColumn":5,"fileName":"spriteutils.ts","functionName":"roundWithPrecision","argumentNames":["x","digitsAfterDecimal"]}
 
-function spriteutils_roundWithPrecision__P50705_mk(s) {
+function spriteutils_roundWithPrecision__P103087_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: spriteutils_roundWithPrecision__P50705, depth: s.depth + 1,
+        parent: s, fn: spriteutils_roundWithPrecision__P103087, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   tmp_2: undefined,
   tmp_3: undefined,
-  rounded___53421: undefined,
-  indDec___53432: undefined,
-  padZeros___53438: undefined,
-  currDecimals___53451: undefined,
-  i___53474: undefined,
+  rounded___103090: undefined,
+  indDec___103101: undefined,
+  padZeros___103107: undefined,
+  currDecimals___103120: undefined,
+  i___103143: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -11732,7 +11732,7 @@ function helpers_imageDrawLine__P48629_mk(s) {
 
 
 
-function spriteutils_angleFrom__P50693(s) {
+function spriteutils_angleFrom__P102946(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -11801,12 +11801,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-spriteutils_angleFrom__P50693.info = {"start":3931,"length":178,"line":113,"column":4,"endLine":119,"endColumn":5,"fileName":"spriteutils.ts","functionName":"angleFrom","argumentNames":["a","b"]}
+spriteutils_angleFrom__P102946.info = {"start":3931,"length":178,"line":113,"column":4,"endLine":119,"endColumn":5,"fileName":"spriteutils.ts","functionName":"angleFrom","argumentNames":["a","b"]}
 
-function spriteutils_angleFrom__P50693_mk(s) {
+function spriteutils_angleFrom__P102946_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: spriteutils_angleFrom__P50693, depth: s.depth + 1,
+        parent: s, fn: spriteutils_angleFrom__P102946, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -11830,7 +11830,7 @@ function spriteutils_angleFrom__P50693_mk(s) {
 
 
 
-function spriteutils_distanceBetween__P50691(s) {
+function spriteutils_distanceBetween__P102884(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -11905,12 +11905,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-spriteutils_distanceBetween__P50691.info = {"start":2510,"length":168,"line":71,"column":4,"endLine":74,"endColumn":5,"fileName":"spriteutils.ts","functionName":"distanceBetween","argumentNames":["a","b"]}
+spriteutils_distanceBetween__P102884.info = {"start":2510,"length":168,"line":71,"column":4,"endLine":74,"endColumn":5,"fileName":"spriteutils.ts","functionName":"distanceBetween","argumentNames":["a","b"]}
 
-function spriteutils_distanceBetween__P50691_mk(s) {
+function spriteutils_distanceBetween__P102884_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: spriteutils_distanceBetween__P50691, depth: s.depth + 1,
+        parent: s, fn: spriteutils_distanceBetween__P102884, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -11937,7 +11937,7 @@ function spriteutils_distanceBetween__P50691_mk(s) {
 
 
 
-function spriteutils_createRenderable__P50698(s) {
+function spriteutils_createRenderable__P103024(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -11963,12 +11963,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-spriteutils_createRenderable__P50698.info = {"start":6778,"length":137,"line":198,"column":4,"endLine":200,"endColumn":5,"fileName":"spriteutils.ts","functionName":"createRenderable","argumentNames":["index","handler"]}
+spriteutils_createRenderable__P103024.info = {"start":6778,"length":137,"line":198,"column":4,"endLine":200,"endColumn":5,"fileName":"spriteutils.ts","functionName":"createRenderable","argumentNames":["index","handler"]}
 
-function spriteutils_createRenderable__P50698_mk(s) {
+function spriteutils_createRenderable__P103024_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: spriteutils_createRenderable__P50698, depth: s.depth + 1,
+        parent: s, fn: spriteutils_createRenderable__P103024, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   arg0: undefined,
@@ -42131,5 +42131,5 @@ const sprites_StaticObstacle__C49054_VT = mkVTable({
 
 const breakpoints = setupDebugger(1, ["d___50708","mySprite___50710","myEnemy___50709","a___50707"])
 
-return _main___P67714
+return _main___P103250
 })
