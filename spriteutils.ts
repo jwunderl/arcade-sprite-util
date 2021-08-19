@@ -5,6 +5,26 @@
 //% block="Sprite Utils"
 //% groups='["Sprite", "General"]'
 namespace spriteutils {
+    export enum Consts {
+        //% block="undefined"
+        Undefined,
+        //% block="null"
+        Null,
+        //% block="NaN"
+        NaN,
+        //% block="π"
+        Pi,
+        //% block="E"
+        E,
+        //% block="LN2"
+        LN2,
+        //% block="LN10"
+        LN10,
+        //% block="√1/2"
+        SQRT1_2,
+        //% block="√2"
+        SQRT2
+    }
     export enum UpdatePriority {
         //% block="updates the controller"
         Controller = scene.CONTROLLER_PRIORITY,
@@ -346,6 +366,7 @@ namespace spriteutils {
     }
 
 
+
     /**
      * TODO: add help docs
      */
@@ -361,5 +382,27 @@ namespace spriteutils {
     export function jumpImpulse(sprite: Sprite, pixels: number) {
         const g = sprite.ay || 200;
         sprite.vy = -Math.sqrt(2 * pixels * g);
+    }
+
+    /**
+     * TODO: add help docs
+     */
+    //% blockId=spriteutilmathconsts
+    //% block="$constType"
+    //% group="General"
+    //% weight=10
+    export function consts(constType: spriteutils.Consts): number {
+        switch (constType) {
+            case Consts.Undefined: return undefined;
+            case Consts.Null: return null;
+            case Consts.NaN: return NaN;
+            case Consts.Pi: return Math.PI;
+            case Consts.E: return Math.E;
+            case Consts.LN2: return Math.LN2;
+            case Consts.LN10: return Math.LN10;
+            case Consts.SQRT1_2: return Math.SQRT1_2;
+            case Consts.SQRT2: return Math.SQRT2;
+            default: return 0;
+        }
     }
 }
