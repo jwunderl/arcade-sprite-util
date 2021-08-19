@@ -14,7 +14,7 @@ namespace spriteutils {
         NaN,
         //% block="π"
         Pi,
-        //% block="E"
+        //% block="e"
         E,
         //% block="LN2"
         LN2,
