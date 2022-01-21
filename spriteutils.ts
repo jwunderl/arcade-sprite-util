@@ -5,10 +5,17 @@
 //% block="Sprite Utils"
 //% groups='["Sprite", "General"]'
 namespace spriteutils {
-    export enum Consts {
+    export enum NullConsts {
         //% block="undefined"
         Undefined,
         //% block="null"
+        Null,
+    }
+
+    export enum Consts {
+        //% block="undefined" blockHidden=1
+        Undefined,
+        //% block="null" blockHidden=1
         Null,
         //% block="NaN"
         NaN,
@@ -369,6 +376,7 @@ namespace spriteutils {
 
     /**
      * TODO: add help docs
+     * pixels > 0
      */
     //% blockId=spriteutiljumpimpulse
     //% block="make $sprite jump $pixels pixels"
@@ -380,8 +388,9 @@ namespace spriteutils {
     //% group=Sprite
     //% weight=70
     export function jumpImpulse(sprite: Sprite, pixels: number) {
-        const g = sprite.ay || 200;
-        sprite.vy = -Math.sqrt(2 * pixels * g);
+        const g = Math.abs(sprite.ay) || 200;
+        const dir = sprite.ay > 0 ? -1 : 1;
+        sprite.vy = dir * Math.sqrt(2 * Math.abs(pixels) * g);
     }
 
     /**
@@ -405,4 +414,20 @@ namespace spriteutils {
             default: return 0;
         }
     }
+
+    /**
+     * TODO: add help docs
+     */
+    //% blockId=spriteutilnullconsts
+    //% block="$constType"
+    //% group="General"
+    //% weight=10
+    export function nullConsts(constType: spriteutils.NullConsts): undefined {
+        switch (constType) {
+            case NullConsts.Undefined: return undefined;
+            case NullConsts.Null: return null;
+            default: return null;
+        }
+    }
+
 }
