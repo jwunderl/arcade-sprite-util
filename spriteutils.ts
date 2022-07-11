@@ -348,7 +348,7 @@ namespace spriteutils {
                 padZeros = digitsAfterDecimal;
                 rounded += ".";
             } else {
-                const currDecimals = rounded.length - indDec;
+                const currDecimals = rounded.length - 1 - indDec;
                 if (currDecimals > digitsAfterDecimal) {
                     rounded = rounded.slice(0, indDec + 1 + digitsAfterDecimal);
                 } else if (currDecimals < digitsAfterDecimal) {

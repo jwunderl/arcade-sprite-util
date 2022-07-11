@@ -73,3 +73,20 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, () => {
     a = spriteutils.angleFrom(mySprite, myEnemy)
     spriteutils.setVelocityAtAngle(myProjectile, a, d)
 })
+function testRoundWPrecision(inp: number, roundTo: number, expected: string) {
+    // console.log("" +inp + ", " + "")
+    const res = spriteutils.roundWithPrecision(inp, roundTo);
+    console.log(`rwp(${inp}, ${roundTo}): ${res}`);
+    console.log(res == expected ? "worked" : `does not match expected ${expected}`);
+}
+let consoleVisible = true;
+game.consoleOverlay.setVisible(consoleVisible);
+testRoundWPrecision(3.14159, 2, "3.14");
+testRoundWPrecision(3.14159, 5, "3.14159");
+testRoundWPrecision(3.1, 2, "3.10");
+testRoundWPrecision(3, 2, "3.00");
+testRoundWPrecision(3.1, 15, "3.100000000000000");
+controller.B.onEvent(ControllerButtonEvent.Pressed, () => {
+    consoleVisible = !consoleVisible;
+    game.consoleOverlay.setVisible(consoleVisible)
+})
