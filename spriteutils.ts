@@ -299,7 +299,6 @@ namespace spriteutils {
     //% draggableParameters=reporter
     //% target.shadow=variables_get
     //% target.defl=mySprite
-
     //% group=Sprite
     //% weight=5
     export function onSpriteUpdate(target: Sprite, callback: (sprite: Sprite) => void) {
@@ -325,7 +324,7 @@ namespace spriteutils {
     //% interval.shadow=timePicker
     //% interval.defl=500
     //% group=Sprite
-    //% weight=5
+    //% weight=4
     export function onSpriteUpdateInterval(target: Sprite, interval: number, callback?: (sprite: Sprite) => void) {
         state().updatingSprites.push(new SpriteUpdateHandler(target, callback, Math.max(interval || 0, 0)))
     }
@@ -337,7 +336,7 @@ namespace spriteutils {
     //% interval.shadow=timePicker
     //% interval.defl=500
     //% group=Sprite
-    //% weight=10
+    //% weight=9
     export function onSpriteKindUpdateInterval(kind: number, interval: number, callback: (sprite: Sprite) => void) {
         state().updatingKinds.push(new SpriteKindUpdateHandler(kind, callback, Math.max(interval || 0, 0)))
     }
