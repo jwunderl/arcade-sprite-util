@@ -293,24 +293,10 @@ namespace spriteutils {
         );
     }
 
-    //% blockId=spriteutilonspriteupdate
-    //% block="on $target update $sprite"
-    //% handlerStatement
-    //% draggableParameters=reporter
-    //% target.shadow=variables_get
-    //% target.defl=mySprite
-    //% group=Sprite
-    //% weight=5
     export function onSpriteUpdate(target: Sprite, callback: (sprite: Sprite) => void) {
         state().updatingSprites.push(new SpriteUpdateHandler(target, callback, 0))
     }
 
-    //% blockId=spriteutilonspritekindupdate
-    //% block="on $sprite of kind $kind update"
-    //% draggableParameters=reporter
-    //% kind.shadow=spritekind
-    //% group=Sprite
-    //% weight=10
     export function onSpriteKindUpdate(kind: number, callback: (sprite: Sprite) => void) {
         state().updatingKinds.push(new SpriteKindUpdateHandler(kind, callback, 0))
     }
