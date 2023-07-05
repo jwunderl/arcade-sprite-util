@@ -23,7 +23,12 @@
         "docs/round-with-precision.md",
         "docs/fill-circle.md",
         "docs/get-sprites-within.md",
-        "docs/add-event-handler.md"
+        "docs/add-event-handler.md",
+        "docs/heading.md",
+        "docs/speed.md",
+        "docs/move-to.md",
+        "docs/move-to-at-speed.md",
+        "docs/pos.md"
     ],
     "testFiles": [
         "test.ts"

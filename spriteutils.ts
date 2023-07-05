@@ -200,9 +200,99 @@ namespace spriteutils {
     //% b.defl=myEnemy
     //% weight=90
     //% group=Sprite
-    export function distanceBetween(a: Sprite, b: Sprite): number {
+    export function distanceBetween(a: Sprite | tiles.Location | Position, b: Sprite | tiles.Location | Position): number {
         if (!a || !b) return 0;
         return Math.sqrt(((a.x - b.x) ** 2) + ((a.y - b.y) ** 2));
+    }
+
+    /**
+     * Returns the angle of movement of a sprite in radians.
+     */
+    //% blockId=spriteutilheading
+    //% block="$sprite velocity angle"
+    //% help=github:arcade-sprite-util/docs/heading
+    //% sprite.shadow=variables_get
+    //% sprite.defl=mySprite
+    //% weight=75
+    //% group=Sprite
+    export function heading(sprite: Sprite): number {
+        return Math.atan2(sprite.vy, sprite.vx);
+    }
+
+    /**
+     * Returns the scalar speed of the sprite in pixels per second.
+     */
+    //% blockId=spriteutilspeed
+    //% block="$sprite speed"
+    //% help=github:arcade-sprite-util/docs/speed
+    //% sprite.shadow=variables_get
+    //% sprite.defl=mySprite
+    //% weight=73
+    //% group=Sprite
+    export function speed(sprite: Sprite): number {
+        return Math.sqrt(sprite.vx * sprite.vx + sprite.vy * sprite.vy);
+    }
+
+    /**
+     * Moves a sprite to the given location over a given amount of time.
+     * The location can be either a sprite, position, or tile location.
+     * If the target location is a moving sprite, the sprite will move
+     * to its location at the time this function is called
+     */
+    //% blockId=spriteutilmoveto
+    //% block="$sprite move to $location over $time ms||and pause $doPause"
+    //% help=github:arcade-sprite-util/docs/move-to
+    //% sprite.shadow=variables_get
+    //% sprite.defl=mySprite
+    //% location.shadow=spriteutilpos
+    //% time.shadow=timePicker
+    //% time.defl=100
+    //% inlineInputMode=inline
+    //% weight=55
+    //% group=Sprite
+    export function moveTo(sprite: Sprite, location: Sprite | tiles.Location | Position, time: number, doPause = false) {
+        moveToAtSpeed(sprite, location, distanceBetween(sprite, location) / (time / 1000), doPause);
+    }
+
+    /**
+     * Moves a sprite to the given location at a given speed.
+     * The location can be either a sprite, position, or tile location.
+     * If the target location is a moving sprite, the sprite will move
+     * to its location at the time this function is called
+     */
+    //% blockId=spriteutilmovetoatspeed
+    //% block="$sprite move to $location at speed $speed||and pause $doPause"
+    //% help=github:arcade-sprite-util/docs/move-to-at-speed
+    //% sprite.shadow=variables_get
+    //% sprite.defl=mySprite
+    //% speed.defl=100
+    //% location.shadow=spriteutilpos
+    //% inlineInputMode=inline
+    //% weight=53
+    //% group=Sprite
+    export function moveToAtSpeed(sprite: Sprite, location: Sprite | tiles.Location | Position, speed: number, doPause = false) {
+        setVelocityAtAngle(sprite, angleFrom(sprite, location), speed);
+
+        const time = 1000 * (distanceBetween(sprite, location) / speed);
+
+        const x = location.x;
+        const y = location.y;
+
+        if (doPause) {
+            pause(time);
+            sprite.vx = 0;
+            sprite.vy = 0;
+            sprite.x = x;
+            sprite.y = y;
+        }
+        else {
+            setTimeout(() => {
+                sprite.vx = 0;
+                sprite.vy = 0;
+                sprite.x = x;
+                sprite.y = y;
+            }, time);
+        }
     }
 
     /**
@@ -215,7 +305,7 @@ namespace spriteutils {
     //% sprite.defl=mySprite
     //% weight=85
     //% group=Sprite
-    export function getSpritesWithin(kind: number, distance: number, sprite: Sprite): Sprite[] {
+    export function getSpritesWithin(kind: number, distance: number, sprite: Sprite | tiles.Location | Position): Sprite[] {
         let allSprites = sprites.allOfKind(kind);
         let numItems = 0;
         let sortArray = allSprites.filter(function(value: Sprite, index: number) {
@@ -242,7 +332,7 @@ namespace spriteutils {
     //% b.defl=myEnemy
     //% weight=80
     //% group=Sprite
-    export function angleFrom(a: Sprite, b: Sprite): number {
+    export function angleFrom(a: Sprite | tiles.Location | Position, b: Sprite | tiles.Location | Position): number {
         if (!a || !b) return 0;
         return Math.atan2(
             b.y - a.y,
@@ -263,7 +353,7 @@ namespace spriteutils {
     //% spriteToMove.defl=myEnemy
     //% weight=70
     //% group=Sprite
-    export function placeAngleFrom(spriteToMove: Sprite, angleInRadians: number, distance: number, fromSprite: Sprite) {
+    export function placeAngleFrom(spriteToMove: Sprite, angleInRadians: number, distance: number, fromSprite: Sprite | tiles.Location | Position) {
         if (!fromSprite || !spriteToMove)
             return;
 
@@ -568,4 +658,17 @@ namespace spriteutils {
         }
     }
 
+    //% blockId=spriteutilpos
+    //% block="x $x y $y"
+    //% help=github:arcade-sprite-util/docs/pos
+    //% weight=1
+    //% group=General
+    export function pos(x: number, y: number) {
+        return new Position(x, y);
+    }
+
+    export class Position {
+        constructor(public x: number, public y: number) {
+        }
+    }
 }
