@@ -237,7 +237,10 @@ namespace spriteutils {
      * Moves a sprite to the given location over a given amount of time.
      * The location can be either a sprite, position, or tile location.
      * If the target location is a moving sprite, the sprite will move
-     * to its location at the time this function is called
+     * to its location at the time this function is called. Only works
+     * with sprites that have no acceleration or friction. Manually
+     * changing the sprite's velocity while it's moving will cancel
+     * the move.
      */
     //% blockId=spriteutilmoveto
     //% block="$sprite move to $location over $time ms||and pause $doPause"
@@ -258,7 +261,10 @@ namespace spriteutils {
      * Moves a sprite to the given location at a given speed.
      * The location can be either a sprite, position, or tile location.
      * If the target location is a moving sprite, the sprite will move
-     * to its location at the time this function is called
+     * to its location at the time this function is called. Only works
+     * with sprites that have no acceleration or friction. Manually
+     * changing the sprite's velocity while it's moving will cancel
+     * the move.
      */
     //% blockId=spriteutilmovetoatspeed
     //% block="$sprite move to $location at speed $speed||and pause $doPause"
@@ -278,19 +284,35 @@ namespace spriteutils {
         const x = location.x;
         const y = location.y;
 
+        const vx = sprite._vx;
+        const vy = sprite._vy;
+
+        // Store the current game time in the sprite's data.
+        // If this function is called again on this sprite before the
+        // move operation is completed, we want to skip the part where
+        // we clear the velocity and snap the sprite to the destination.
+        const moveTime = game.runtime();
+        const prop = "$__currentMoveTime";
+
+        sprite.data[prop] = moveTime;
+
         if (doPause) {
             pause(time);
-            sprite.vx = 0;
-            sprite.vy = 0;
-            sprite.x = x;
-            sprite.y = y;
-        }
-        else {
-            setTimeout(() => {
+            if (sprite.data[prop] === moveTime && sprite._vx === vx && sprite._vy === vy) {
                 sprite.vx = 0;
                 sprite.vy = 0;
                 sprite.x = x;
                 sprite.y = y;
+            }
+        }
+        else {
+            setTimeout(() => {
+                if (sprite.data[prop] === moveTime && sprite._vx === vx && sprite._vy === vy) {
+                    sprite.vx = 0;
+                    sprite.vy = 0;
+                    sprite.x = x;
+                    sprite.y = y;
+                }
             }, time);
         }
     }

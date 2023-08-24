@@ -8,40 +8,40 @@ let d = 0
 let myEnemy: Sprite = null
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . 4 4 . . . . . . . . 
-    . . . . 4 4 . . 4 4 . . . . . . 
-    . . . 4 . 4 . . . . 4 . . . . . 
-    . . 4 . 4 4 . . . . . 4 . . . . 
-    . . 4 . 4 . . . . . . 4 . . . . 
-    . 4 . . 4 . . . . . . 4 . . . . 
-    . 4 . . 4 . . . . . . 4 . . . . 
-    . . . . 4 . . . . . 4 . . . . . 
-    . . . . . 4 4 . 4 4 4 . . . . . 
-    . . . . . . 4 4 4 . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . 4 4 . . . . . . . .
+    . . . . 4 4 . . 4 4 . . . . . .
+    . . . 4 . 4 . . . . 4 . . . . .
+    . . 4 . 4 4 . . . . . 4 . . . .
+    . . 4 . 4 . . . . . . 4 . . . .
+    . 4 . . 4 . . . . . . 4 . . . .
+    . 4 . . 4 . . . . . . 4 . . . .
+    . . . . 4 . . . . . 4 . . . . .
+    . . . . . 4 4 . 4 4 4 . . . . .
+    . . . . . . 4 4 4 . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     `, SpriteKind.Player)
 myEnemy = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . 3 3 . . . . . . . . 
-    . . . . 3 3 . . 3 3 . . . . . . 
-    . . . 3 . 3 . . . . 3 . . . . . 
-    . . 3 . 3 3 . . . . . 3 . . . . 
-    . . 3 . 3 . . . . . . 3 . . . . 
-    . 3 . . 3 . . . . . . 3 . . . . 
-    . 3 . . 3 . . . . . . 3 . . . . 
-    . . . . 3 . . . . . 3 . . . . . 
-    . . . . . 3 3 . 3 3 3 . . . . . 
-    . . . . . . 3 3 3 . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . 3 3 . . . . . . . .
+    . . . . 3 3 . . 3 3 . . . . . .
+    . . . 3 . 3 . . . . 3 . . . . .
+    . . 3 . 3 3 . . . . . 3 . . . .
+    . . 3 . 3 . . . . . . 3 . . . .
+    . 3 . . 3 . . . . . . 3 . . . .
+    . 3 . . 3 . . . . . . 3 . . . .
+    . . . . 3 . . . . . 3 . . . . .
+    . . . . . 3 3 . 3 3 3 . . . . .
+    . . . . . . 3 3 3 . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     `, SpriteKind.Player)
 myEnemy.setPosition(156, 112)
 
@@ -89,4 +89,29 @@ testRoundWPrecision(3.1, 15, "3.100000000000000");
 controller.B.onEvent(ControllerButtonEvent.Pressed, () => {
     consoleVisible = !consoleVisible;
     game.consoleOverlay.setVisible(consoleVisible)
+})
+
+let pIndex = 1;
+const positions = [
+    spriteutils.pos(0, 0),
+    spriteutils.pos(160, 0),
+    spriteutils.pos(160, 120),
+    spriteutils.pos(0, 120),
+];
+
+let moveSprite = sprites.create(img`
+3 3 3 3
+3 3 3 3
+3 3 3 3
+3 3 3 3
+`)
+
+spriteutils.moveTo(moveSprite, positions[0], 1000)
+
+controller.up.onEvent(ControllerButtonEvent.Pressed, () => {
+    spriteutils.moveTo(moveSprite, positions[pIndex++ % positions.length], 1000)
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, () => {
+    moveSprite.vx = 5
+    moveSprite.vy = 5
 })
