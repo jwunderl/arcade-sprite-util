@@ -321,6 +321,7 @@ namespace spriteutils {
      * Returns array of sprites of kind that are within a specified distance.
      */
     //% block="get all sprites of kind $kind within $distance pixels from $sprite"
+    //% help=github:arcade-sprite-util/docs/get-sprites-within
     //% kind.shadow=spritekind
     //% distance.defl=50
     //% sprite.shadow=variables_get
@@ -413,8 +414,12 @@ namespace spriteutils {
         state().updatingKinds.push(new SpriteKindUpdateHandler(kind, callback, 0))
     }
 
+    /**
+     * Runs code for a specific sprite on a regular interval.
+     */
     //% blockId=spriteutilonspriteupdateinterval
     //% block="on $target update $sprite every $interval ms"
+    //% help=github:arcade-sprite-util/docs/on-sprite-update-interval
     //% handlerStatement
     //% draggableParameters=reporter
     //% target.shadow=variables_get
@@ -427,8 +432,12 @@ namespace spriteutils {
         state().updatingSprites.push(new SpriteUpdateHandler(target, callback, Math.max(interval || 0, 0)))
     }
 
+    /**
+     * Runs code for all sprites of a specific kind on a regular interval.
+     */
     //% blockId=spriteutilonspritekindupdateinterval
     //% block="on $sprite of kind $kind update every $interval ms"
+    //% help=github:arcade-sprite-util/docs/on-sprite-kind-update-interval
     //% draggableParameters=reporter
     //% kind.shadow=spritekind
     //% interval.shadow=timePicker
@@ -625,11 +634,13 @@ namespace spriteutils {
 
 
     /**
-     * TODO: add help docs
-     * pixels > 0
+     * Makes a sprite jump by applying an instantaneous vertical velocity change
+     * based on the sprite's gravity (acceleration y). The sprite will jump to
+     * approximately the specified height in pixels.
      */
     //% blockId=spriteutiljumpimpulse
     //% block="make $sprite jump $pixels pixels"
+    //% help=github:arcade-sprite-util/docs/jump-impulse
     //% pixels.defl=34
     //% pixels.min=0
     //% pixels.max=120
@@ -644,10 +655,12 @@ namespace spriteutils {
     }
 
     /**
-     * TODO: add help docs
+     * Returns mathematical and special constants including π (pi),
+     * e (Euler's number), and other useful values.
      */
     //% blockId=spriteutilmathconsts
     //% block="$constType"
+    //% help=github:arcade-sprite-util/docs/consts
     //% group="General"
     //% weight=10
     export function consts(constType: spriteutils.Consts): number {
@@ -666,10 +679,11 @@ namespace spriteutils {
     }
 
     /**
-     * TODO: add help docs
+     * Returns special null-like values including undefined and null.
      */
     //% blockId=spriteutilnullconsts
     //% block="$constType"
+    //% help=github:arcade-sprite-util/docs/null-consts
     //% group="General"
     //% weight=10
     export function nullConsts(constType: spriteutils.NullConsts): undefined {

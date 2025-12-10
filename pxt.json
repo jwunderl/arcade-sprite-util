@@ -28,7 +28,12 @@
         "docs/speed.md",
         "docs/move-to.md",
         "docs/move-to-at-speed.md",
-        "docs/pos.md"
+        "docs/pos.md",
+        "docs/jump-impulse.md",
+        "docs/consts.md",
+        "docs/null-consts.md",
+        "docs/on-sprite-update-interval.md",
+        "docs/on-sprite-kind-update-interval.md"
     ],
     "testFiles": [
         "test.ts"
