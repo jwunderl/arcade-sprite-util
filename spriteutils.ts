@@ -625,11 +625,13 @@ namespace spriteutils {
 
 
     /**
-     * TODO: add help docs
-     * pixels > 0
+     * Makes a sprite jump by applying an instantaneous vertical velocity change
+     * based on the sprite's gravity (acceleration y). The sprite will jump to
+     * approximately the specified height in pixels.
      */
     //% blockId=spriteutiljumpimpulse
     //% block="make $sprite jump $pixels pixels"
+    //% help=github:arcade-sprite-util/docs/jump-impulse
     //% pixels.defl=34
     //% pixels.min=0
     //% pixels.max=120
@@ -644,10 +646,12 @@ namespace spriteutils {
     }
 
     /**
-     * TODO: add help docs
+     * Returns mathematical and special constants including π (pi),
+     * e (Euler's number), and other useful values.
      */
     //% blockId=spriteutilmathconsts
     //% block="$constType"
+    //% help=github:arcade-sprite-util/docs/consts
     //% group="General"
     //% weight=10
     export function consts(constType: spriteutils.Consts): number {
@@ -666,10 +670,11 @@ namespace spriteutils {
     }
 
     /**
-     * TODO: add help docs
+     * Returns special null-like values including undefined and null.
      */
     //% blockId=spriteutilnullconsts
     //% block="$constType"
+    //% help=github:arcade-sprite-util/docs/null-consts
     //% group="General"
     //% weight=10
     export function nullConsts(constType: spriteutils.NullConsts): undefined {
