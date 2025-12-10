@@ -414,8 +414,12 @@ namespace spriteutils {
         state().updatingKinds.push(new SpriteKindUpdateHandler(kind, callback, 0))
     }
 
+    /**
+     * Runs code for a specific sprite on a regular interval.
+     */
     //% blockId=spriteutilonspriteupdateinterval
     //% block="on $target update $sprite every $interval ms"
+    //% help=github:arcade-sprite-util/docs/on-sprite-update-interval
     //% handlerStatement
     //% draggableParameters=reporter
     //% target.shadow=variables_get
@@ -428,8 +432,12 @@ namespace spriteutils {
         state().updatingSprites.push(new SpriteUpdateHandler(target, callback, Math.max(interval || 0, 0)))
     }
 
+    /**
+     * Runs code for all sprites of a specific kind on a regular interval.
+     */
     //% blockId=spriteutilonspritekindupdateinterval
     //% block="on $sprite of kind $kind update every $interval ms"
+    //% help=github:arcade-sprite-util/docs/on-sprite-kind-update-interval
     //% draggableParameters=reporter
     //% kind.shadow=spritekind
     //% interval.shadow=timePicker
