@@ -321,6 +321,7 @@ namespace spriteutils {
      * Returns array of sprites of kind that are within a specified distance.
      */
     //% block="get all sprites of kind $kind within $distance pixels from $sprite"
+    //% help=github:arcade-sprite-util/docs/get-sprites-within
     //% kind.shadow=spritekind
     //% distance.defl=50
     //% sprite.shadow=variables_get
