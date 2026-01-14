@@ -68,6 +68,19 @@ namespace spriteutils {
         After
     }
 
+    export enum ImageTransform {
+        //% block="flip horizontal"
+        FlipHorizontal,
+        //% block="flip vertical"
+        FlipVertical,
+        //% block="rotate 90 degrees clockwise"
+        Rotate90CW,
+        //% block="rotate 180 degrees clockwise"
+        Rotate180CW,
+        //% block="rotate 270 degrees clockwise"
+        Rotate270CW
+    }
+
     let stateStack: SpriteUtilState[];
 
     class SpriteUpdateHandler {
@@ -705,6 +718,35 @@ namespace spriteutils {
 
     export class Position {
         constructor(public x: number, public y: number) {
+        }
+    }
+
+    //% blockId=spriteutiltransformspriteimage
+    //% block="apply $transform to $sprite image"
+    //% group=Sprite
+    //% weight=40
+    //% help=github:arcade-sprite-util/docs/transform-sprite-image
+    export function transformSpriteImage(sprite: Sprite, transform: ImageTransform) {
+        if (!sprite || !sprite.image) {
+            return;
+        }
+
+        switch (transform) {
+            case ImageTransform.FlipHorizontal:
+                sprite.image.flipX();
+                break;
+            case ImageTransform.FlipVertical:
+                sprite.image.flipY();
+                break;
+            case ImageTransform.Rotate90CW:
+                sprite.setImage(sprite.image.rotated(90))
+                break;
+            case ImageTransform.Rotate180CW:
+                sprite.setImage(sprite.image.rotated(180))
+                break;
+            case ImageTransform.Rotate270CW:
+                sprite.setImage(sprite.image.rotated(270))
+                break;
         }
     }
 }
