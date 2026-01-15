@@ -33,7 +33,8 @@
         "docs/consts.md",
         "docs/null-consts.md",
         "docs/on-sprite-update-interval.md",
-        "docs/on-sprite-kind-update-interval.md"
+        "docs/on-sprite-kind-update-interval.md",
+        "docs/transform-sprite-image.md"
     ],
     "testFiles": [
         "test.ts"
