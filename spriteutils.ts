@@ -740,6 +740,8 @@ namespace spriteutils {
     //% block="apply $transform to $sprite image"
     //% group=Sprite
     //% weight=40
+    //% sprite.shadow=variables_get
+    //% sprite.defl=mySprite
     //% help=github:arcade-sprite-util/docs/transform-sprite-image
     export function transformSpriteImage(sprite: Sprite, transform: ImageTransform) {
         if (!sprite || !sprite.image) {
