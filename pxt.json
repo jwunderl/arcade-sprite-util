@@ -3,7 +3,8 @@
     "version": "0.5.0",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "arcade-extension-utils": "github:riknoll/arcade-extension-utils#v0.1.0"
     },
     "files": [
         "README.md",
@@ -29,6 +30,7 @@
         "docs/move-to.md",
         "docs/move-to-at-speed.md",
         "docs/pos.md",
+        "docs/point.md",
         "docs/jump-impulse.md",
         "docs/consts.md",
         "docs/null-consts.md",
